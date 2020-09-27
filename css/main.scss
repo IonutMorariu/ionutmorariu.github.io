@@ -1,0 +1,317 @@
+/*Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+html {
+  /* Colors */
+  --text-color-normal: #282828;
+  --text-color-light: #565656;
+  --accent-color: #ee418a;
+  --accent-color-light: #ff9ac4;
+  --body-background: #e8eaef;
+  --white: #fafafa;
+  /* Fonts */
+  --title-font-family: "Poppins", sans-serif;
+  --content-font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--body-background);
+  color: var(--text-color-normal);
+  font-size: 1.6rem;
+  font-family: var(--content-font-family);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color-normal);
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.status-circle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: inline-block;
+  &.green {
+    background: #2ecc71;
+    box-shadow: 0 0 10px 1px rgba(46, 204, 113, 0.5);
+  }
+
+  &.orange {
+    background: #f39c12;
+    box-shadow: 0 0 10px 1px rgba(243, 156, 18, 0.5);
+  }
+
+  &.red {
+    background: #e74c3c;
+    box-shadow: 0 0 10px 1px rgba(231, 76, 60, 0.5);
+  }
+}
+
+.cover-top {
+  background-image: linear-gradient(to bottom, var(--body-background), rgba(0, 0, 0, 0));
+
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.cover-bottom {
+  background-image: linear-gradient(to top, var(--body-background), rgba(0, 0, 0, 0));
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.main {
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 10rem;
+  display: grid;
+  grid-template-columns: 1fr 1px 4fr;
+  column-gap: 2rem;
+  @media (max-width: 767px) {
+    width: 90vw;
+    display: initial;
+    padding: 4rem 2rem;
+  }
+
+  .sticky-info {
+    height: 400px;
+    position: sticky;
+    @media (max-width: 767px) {
+      position: initial;
+      height: auto;
+      width: 90vw;
+    }
+    top: 4rem;
+    padding: 1rem;
+
+    .occupation {
+      font-weight: 300;
+      font-size: 2.4rem;
+      margin-bottom: 0.6rem;
+    }
+    .name {
+      font-weight: 600;
+      font-size: 4.5rem;
+    }
+    .image-container {
+      display: flex;
+      margin-top: 2rem;
+      .image {
+        width: 14rem;
+        height: 14rem;
+        border-radius: 50%;
+        object-fit: cover;
+        z-index: 1;
+      }
+      .circle {
+        width: 14rem;
+        height: 14rem;
+        border-radius: 50%;
+        background: var(--accent-color);
+        margin-left: -7rem;
+      }
+    }
+
+    .status-container {
+      margin-top: 1.5rem;
+      .title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .status-info {
+        .status-text {
+          margin-left: 0.5rem;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .location-container {
+      display: flex;
+      margin-top: 2rem;
+      .icon-container {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--text-color-normal);
+        color: var(--accent-color);
+      }
+      .place-container {
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        background: var(--text-color-normal);
+        color: var(--white);
+        margin-left: 0.3rem;
+        h3 {
+          font-size: 2rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .relocation {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-container {
+      display: flex;
+      margin-top: 1rem;
+      .contact-item {
+        width: 4rem;
+        height: 4rem;
+        background: var(--text-color-normal);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-color);
+        transition: all 100ms ease-in-out;
+        margin-right: 0.5rem;
+        &:hover {
+          text-decoration: none;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .divider {
+    border-left: 1px solid #c4c4c4;
+    height: 91vh;
+    position: sticky;
+    top: 4rem;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .resume-info {
+    padding: 1rem;
+    width: 95%;
+    .section {
+      margin-bottom: 2rem;
+      @media (max-width: 767px) {
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+      }
+      .section-title {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+      .section-paragraph {
+        line-height: 2rem;
+      }
+      &.two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5rem;
+        @media (max-width: 767px) {
+          display: initial;
+        }
+      }
+
+      .subsection {
+        margin-bottom: 1rem;
+        @media (max-width: 767px) {
+          margin-bottom: 2rem;
+        }
+        .subsection-title {
+          font-weight: 700;
+          font-size: 1.6rem;
+          text-transform: uppercase;
+          margin-bottom: 0.75rem;
+        }
+        .subsection-text {
+          line-height: 2rem;
+        }
+      }
+    }
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      .tool-tag {
+        margin: 0.5rem 0.75rem;
+        padding: 0.5rem 1.5rem;
+        background: var(--accent-color-light);
+      }
+    }
+    .project-card {
+      background: var(--white);
+      padding: 1.5rem 3rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+      .card-title {
+        font-weight: 600;
+        font-size: 1.7rem;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+      }
+      .card-link {
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: var(--accent-color);
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-text {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      .card-tags {
+        display: flex;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+        .tag-item {
+          font-size: 1.4rem;
+          margin: 0.5rem;
+          padding: 0.25rem 1.5rem;
+          border: 1px solid lightgray;
+          border-radius: 50px;
+        }
+      }
+    }
+
+    .arrow-list {
+      position: relative;
+      list-style: none;
+      li {
+        padding-left: 3rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        &:before {
+          content: "▶";
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+    .end-text {
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 3rem;
+    }
+  }
+}
